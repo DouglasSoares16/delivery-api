@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import "./database/connection";
 
 import express from "express";
