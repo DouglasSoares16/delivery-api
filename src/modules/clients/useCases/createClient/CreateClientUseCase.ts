@@ -1,6 +1,7 @@
 import { hash } from "bcryptjs";
 
 import { prisma } from "../../../../database/prismaClient";
+import { CreateClientError } from "./CreateClientError";
 
 interface ICreateClientDTO {
   username: string;
@@ -18,7 +19,7 @@ class CreateClientUseCase {
     });
 
     if (clientExists) {
-      throw new Error("Client Already Exists!");
+      throw new CreateClientError.ClientAlreadyExists();
     }
 
     const passwordHash = await hash(password, 10);
