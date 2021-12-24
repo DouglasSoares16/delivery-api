@@ -14,13 +14,13 @@ class AuthenticateClientUseCase {
     });
 
     if (!clientExists) {
-      throw new AuthenticateUserError.EmailOrPasswordIncorrect();
+      throw new AuthenticateUserError.UsernameOrPasswordIncorrect();
     }
 
     const passwordMatch = await compare(password, clientExists.password);
 
     if (!passwordMatch) {
-      throw new AuthenticateUserError.EmailOrPasswordIncorrect();
+      throw new AuthenticateUserError.UsernameOrPasswordIncorrect();
     }
 
     const token = sign(
