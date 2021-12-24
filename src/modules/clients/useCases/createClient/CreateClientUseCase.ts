@@ -2,11 +2,7 @@ import { hash } from "bcryptjs";
 
 import { prisma } from "../../../../database/prismaClient";
 import { CreateClientError } from "./CreateClientError";
-
-interface ICreateClientDTO {
-  username: string;
-  password: string;
-}
+import { ICreateClientDTO } from "./ICreateClientDTO";
 
 class CreateClientUseCase {
   async execute({ username, password }: ICreateClientDTO) {
