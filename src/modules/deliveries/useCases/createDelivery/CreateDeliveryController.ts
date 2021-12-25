@@ -6,7 +6,9 @@ class CreateDeliveryController {
   async handle(request: Request, response: Response) {
     const createDeliveryUseCase = new CreateDeliveryUseCase();
 
-    const { client_id, item_name } = request.body;
+    const { item_name } = request.body;
+
+    const { client_id } = request;
 
     const delivery = await createDeliveryUseCase.execute({
       client_id,
