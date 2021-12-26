@@ -27,7 +27,7 @@ class AuthenticateDeliverymanUseCase {
       {
         username,
       },
-      "kbfgksdfeqwpoipzxesa",
+      "ae839f43eb9aff28fea572636a126a7d",
       {
         subject: deliverymanExists.id,
         expiresIn: "1d",
