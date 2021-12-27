@@ -6,8 +6,10 @@ class FindAllDeliveriesUseCase {
       where: {
         id: client_id,
       },
-      include: {
+      select: {
         Deliveries: true,
+        id: true,
+        username: true,
       },
     });
 
